@@ -7,21 +7,29 @@ import "./index.css"
 
 class App extends Component {
   state = {
-    results: []
+    results: [],
+    nextPageToken: "",
+    prevPageToken: "",
+    selectedVideo: null
   }
 
   search = (term) => {
     searchVideos(term)
-      .then(console.log)
+      .then(payload => {
+        this.setState({
+          results: payload.items,
+          nextPageToken: payload.nextPageToken || "",
+          prevPageToken: payload.prevPageToken || ""
+        })
+      })
   }
 
   render() {
-    console.log(this.state.results);
     return (
       <div id="app">
         <SearchBar search={this.search}/>
-        <ResultsContainer />
-        <VideoContainer />
+        <ResultsContainer results={this.state.results}/>
+        <VideoContainer selectedVideo={this.state.selectedVideo} />
       </div>
     );
   }

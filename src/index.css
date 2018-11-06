@@ -44,5 +44,20 @@ body {
 
 #results-container {
   grid-area: results;
-  background-color: yellow;
+  overflow-y: scroll;
+}
+
+.video-item {
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: minmax(150px, 35%) auto;
+  grid-gap: 5px;
+  margin-bottom: 5px;
+  overflow:hidden;
+}
+
+.video-item > img {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
