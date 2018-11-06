@@ -21,7 +21,6 @@ body {
 
 #search-bar input {
   height: 80%;
-  border: none;
   text-align: center;
   font-size: 100%;
 }
@@ -31,6 +30,7 @@ body {
 }
 
 #search-bar input[type="submit"] {
+  border: none;
   margin-left: 10px;
   width: 20%;
   background-color: grey;
