@@ -24,11 +24,17 @@ class App extends Component {
       })
   }
 
+  setSelectedVideo = (video) => {
+    this.setState({
+      selectedVideo: video
+    })
+  }
+
   render() {
     return (
       <div id="app">
         <SearchBar search={this.search}/>
-        <ResultsContainer results={this.state.results}/>
+        <ResultsContainer results={this.state.results} setSelectedVideo={this.setSelectedVideo}/>
         <VideoContainer selectedVideo={this.state.selectedVideo} />
       </div>
     );
